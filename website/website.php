@@ -3,7 +3,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>
-   Amiel Jake - 3D Animated Personal Website
+   Amiel Jake Personal Website
   </title>
   <script src="https://cdn.tailwindcss.com">
   </script>
@@ -386,6 +386,31 @@
 section {
   scroll-margin-top: 100px;
 }
+/* Smooth fade for navbar and theme toggle */
+#navbar,
+#theme-toggle {
+  transition: opacity 0.4s ease-in-out, background-color 0.6s ease;
+}
+
+#navbar.transparent,
+#theme-toggle.transparent {
+  opacity: 0;
+  background-color: transparent !important;
+}
+
+#navbar.visible,
+#theme-toggle.visible {
+  opacity: 1;
+}
+ /* Smooth scrolling for the whole page */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Optional: Add a little offset so content doesn't stick to top */
+  section[id] {
+    scroll-margin-top: 80px; /* Adjust based on your header height */
+  }
   </style>
  </head>
  <body class="light">
@@ -401,7 +426,7 @@ section {
   <i class="fas fa-moon"></i>
 </button>
   <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full bg-transparent z-40">
+   <header id="navbar" class="fixed top-0 left-0 w-full bg-transparent z-40">
    <nav class="container flex justify-between items-center py-6">
     <a class="text-3xl font-extrabold tracking-wide text-[#EE6A59] select-none" href="#home">
      Amiel Jake
@@ -514,10 +539,12 @@ section {
    </canvas>
    <div class="relative z-10 text-center max-w-4xl px-6">
     <h1 class="text-5xl md:text-7xl font-extrabold text-[#EE6A59] mb-4 opacity-0 translate-y-10" id="hero-name">
-     Amiel Jake
+     Hwan-yeong
     </h1>
     <p class="text-xl md:text-2xl font-semibold text-[#F9AC67] opacity-0 translate-y-10" id="hero-title">
-     Creative Developer | Music Lover | Dream Builder
+     IT Student | Developer | Designer | Music Lover | 
+     Building Interactive Experiences with Code, Creativity, 
+     and a Touch of Sound
     </p>
    </div>
    <div aria-label="Scroll Down" class="scroll-down" id="scroll-down" role="button" tabindex="0">
@@ -534,7 +561,7 @@ section {
     <div class="w-72 h-72 md:w-96 md:h-96 relative mx-auto">
      <canvas class="w-full h-full rounded-xl shadow-lg" id="about-blob">
      </canvas>
-     <img alt="../images/Jake.png" class="absolute top-1/2 left-1/2 w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-2xl border-8 border-[#F9AC67] -translate-x-1/2 -translate-y-1/2" loading="lazy" src="../images/Jake.png"/>
+     <img class="absolute top-1/2 left-1/2 w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-2xl border-8 border-[#F9AC67] -translate-x-1/2 -translate-y-1/2" loading="lazy" src="../images/Jake.png"/>
     </div>
     <div class="max-w-xl space-y-6 text-[#3A3F58] dark:text-[#ECE6CD]">
      <p class="text-lg leading-relaxed">
@@ -673,42 +700,35 @@ section {
     My Favorite Music
    </h2>
    <div class="relative flex justify-center mb-12">
-    <canvas aria-hidden="true" height="200" id="vinyl-canvas" style="border-radius: 50%; box-shadow: 0 0 30px #EE6A59;" width="200">
+    <canvas aria-hidden="true" height="200" id="vinyl-canvas" style="border-radius: 50%; box-shadow: 0 0 30px #00bd13ff;" width="200">
     </canvas>
    </div>
    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
     <!-- Luke Chiang Songs -->
     <div class="bg-[#ECE6CD] dark:bg-[#2c3145] rounded-xl shadow-lg p-6 flex flex-col gap-4">
-     <h3 class="text-2xl font-semibold text-[#3A3F58] dark:text-[#ECE6CD] border-b-4 border-[#EE6A59] pb-2 mb-4">
-      Luke Chiang
-     </h3>
-     <div class="flex flex-col gap-3 overflow-y-auto max-h-72 pr-2">
-      <songcard artist="Luke Chiang" spotify="https://open.spotify.com/track/3v6q6q6q6q6q6q6q6q6q6q" title="Shouldn't Be">
+      <h3 class="text-2xl font-semibold text-[#3A3F58] dark:text-[#ECE6CD] border-b-4 border-[#EE6A59] pb-2 mb-4">
+        Luke Chiang
+      </h3>
+     <div class="flex flex-col gap-3 overflow-y-auto max-h-72 pr-2" id="luke-chiang-songs">
+      <songcard artist="Luke Chiang" spotify="https://open.spotify.com/track/7F6PtLP6fJPVtA1FWVkl8K?si=dab6986d0151499e" title="Shouldn't Be">
       </songcard>
-      <songcard artist="Luke Chiang" spotify="https://open.spotify.com/track/4a7a7a7a7a7a7a7a7a7a7a7" title="May I Ask">
+      <songcard artist="Luke Chiang" spotify="https://open.spotify.com/track/3BajoSb3TjPbcOC873OjbD?si=ce64025ad4864519" title="May I Ask">
       </songcard>
-      <songcard artist="Luke Chiang" spotify="https://open.spotify.com/track/5b8b8b8b8b8b8b8b8b8b8b8" title="Paragraph">
+      <songcard artist="Luke Chiang" spotify="https://open.spotify.com/track/2p9Ac0KQAUfOIXXWAxlzmM?si=6949ca9293c74094" title="Paragraph">
       </songcard>
-      <songcard artist="Luke Chiang" spotify="https://open.spotify.com/track/6c9c9c9c9c9c9c9c9c9c9c9" title="Never Tell">
+      <songcard artist="Luke Chiang" spotify="https://open.spotify.com/track/72Vu0dhVlpjtdPdli224Nf?si=234b36a68fe34094" title="Never Tell">
+      </songcard>
+      <songcard artist="Luke Chiang" spotify="https://open.spotify.com/track/0wEqNUKF9MH4pk5va6HNCt?si=3eea258f3ff34bd8" title="Bittersweet">
       </songcard>
      </div>
     </div>
-    <!-- Sarah Kang Songs -->
+    <!-- Jesse Barrera Songs (dating Sarah Kang) -->
     <div class="bg-[#ECE6CD] dark:bg-[#2c3145] rounded-xl shadow-lg p-6 flex flex-col gap-4">
-     <h3 class="text-2xl font-semibold text-[#3A3F58] dark:text-[#ECE6CD] border-b-4 border-[#EE6A59] pb-2 mb-4">
-      Sarah Kang
-     </h3>
-     <div class="flex flex-col gap-3 overflow-y-auto max-h-72 pr-2">
-      <songcard artist="Sarah Kang" spotify="https://open.spotify.com/track/7d0d0d0d0d0d0d0d0d0d0d0" title="Bittersweet">
-      </songcard>
-     </div>
-    </div>
-    <!-- Jesse Barrera Songs -->
-    <div class="bg-[#ECE6CD] dark:bg-[#2c3145] rounded-xl shadow-lg p-6 flex flex-col gap-4 md:col-span-3">
-     <h3 class="text-2xl font-semibold text-[#3A3F58] dark:text-[#ECE6CD] border-b-4 border-[#EE6A59] pb-2 mb-4">
-      Jesse Barrera
-     </h3>
-     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 overflow-y-auto max-h-72 pr-2">
+      <h3 class="text-2xl font-semibold text-[#3A3F58] dark:text-[#ECE6CD] border-b-4 border-[#EE6A59] pb-2 mb-4">
+        Jesse Barrera
+      </h3>
+      <div class="flex flex-col gap-3 overflow-y-auto max-h-72 pr-2" id="jesse-barrera-songs">
+     
       <songcard artist="Jesse Barrera" spotify="https://open.spotify.com/track/8e1e1e1e1e1e1e1e1e1e1e1" title="Pretend">
       </songcard>
       <songcard artist="Jesse Barrera" spotify="https://open.spotify.com/track/9f2f2f2f2f2f2f2f2f2f2f2" title="Strawberry Soju">
@@ -721,7 +741,26 @@ section {
       </songcard>
      </div>
     </div>
+    <!-- RINI Songs (dating Jesse Barrera) -->
+    <div class="bg-[#ECE6CD] dark:bg-[#2c3145] rounded-xl shadow-lg p-6 flex flex-col gap-4">
+      <h3 class="text-2xl font-semibold text-[#3A3F58] dark:text-[#ECE6CD] border-b-4 border-[#EE6A59] pb-2 mb-4">
+        RINI
+      </h3>
+       <div class="flex flex-col gap-3 overflow-y-auto max-h-72 pr-2" id="rini-songs">
+      <songcard artist="RINI" spotify="https://open.spotify.com/track/8e1e1e1e1e1e1e1e1e1e1e1" title="Gone With The Wind">
+      </songcard>
+      <songcard artist="RINI" spotify="https://open.spotify.com/track/9f2f2f2f2f2f2f2f2f2f2f2" title="Strawberry Blossom">
+      </songcard>
+      <songcard artist="RINI" spotify="https://open.spotify.com/track/0a3a3a3a3a3a3a3a3a3a3a3" title="Out Of The Blue">
+      </songcard>
+      <songcard artist="RINI" spotify="https://open.spotify.com/track/1b4b4b4b4b4b4b4b4b4b4b4" title="Scars">
+      </songcard>
+      <songcard artist="RINI" spotify="https://open.spotify.com/track/2c5c5c5c5c5c5c5c5c5c5c5" title="For Days">
+      </songcard>
+    </div>
    </div>
+      </div>
+   
   </section>
   <!-- Portfolio Section -->
   <section class="bg-[#3A3F58] dark:bg-[#2c3145] py-20" id="portfolio">
@@ -751,21 +790,21 @@ section {
     Gallery &amp; Life Moments
    </h2>
    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-    <galleryimage alt="Travel photo of Amiel at a mountain peak during sunset" src="https://placehold.co/400x400/png?text=Travel+1">
+    <galleryimage alt="Travel photo of Amiel at a mountain peak during sunset" src="../images/1.jpg">
     </galleryimage>
-    <galleryimage alt="Amiel playing guitar in a cozy room with warm lighting" src="https://placehold.co/400x400/png?text=Hobby+1">
+    <galleryimage alt="Amiel playing guitar in a cozy room with warm lighting" src="../images/2.jpg">
     </galleryimage>
-    <galleryimage alt="Amiel walking on a beach with waves and blue sky" src="https://placehold.co/400x400/png?text=Travel+2">
+    <galleryimage alt="Amiel walking on a beach with waves and blue sky" src="../images/3.jpg">
     </galleryimage>
-    <galleryimage alt="Amiel painting on a canvas in a bright art studio" src="https://placehold.co/400x400/png?text=Hobby+2">
+    <galleryimage alt="Amiel painting on a canvas in a bright art studio" src="../images/4.jpg">
     </galleryimage>
-    <galleryimage alt="Amiel exploring a vibrant city street at night with neon lights" src="https://placehold.co/400x400/png?text=Travel+3">
+    <galleryimage alt="Amiel exploring a vibrant city street at night with neon lights" src="../images/5.jpg">
     </galleryimage>
-    <galleryimage alt="Amiel laughing with friends at a cafe outdoor" src="https://placehold.co/400x400/png?text=Life+Moment">
+    <galleryimage alt="Amiel laughing with friends at a cafe outdoor" src="../images/6.jpg">
     </galleryimage>
-    <galleryimage alt="Amiel working on a laptop with headphones on in a cozy workspace" src="https://placehold.co/400x400/png?text=Hobby+3">
+    <galleryimage alt="Amiel working on a laptop with headphones on in a cozy workspace" src="../images/7.jpg">
     </galleryimage>
-    <galleryimage alt="Amiel hiking through a lush green forest trail" src="https://placehold.co/400x400/png?text=Travel+4">
+    <galleryimage alt="Amiel hiking through a lush green forest trail" src="../images/8.jpg">
     </galleryimage>
    </div>
   </section>
@@ -775,7 +814,8 @@ section {
     <h2 class="text-4xl font-bold mb-8 text-[#3A3F58] dark:text-[#ECE6CD]">
      Quote of the Day
     </h2>
-    <p aria-atomic="true" aria-live="polite" class="text-2xl font-semibold text-[#3A3F58] dark:text-[#ECE6CD] typewriter" id="quote-text">
+    <p class="text-xl md:text-2xl font-semibold text-white opacity-0 translate-y-10" id="hero-title">
+     "In a world that can be harsh and uncertain, 'With a Smile' reminds us that strength isn’t in never falling—but in rising with grace, facing struggles with hope, and choosing to smile not because everything is perfect… but because we believe it can still be okay." 
     </p>
     <button aria-label="Toggle inspirational background music" class="mt-8 bg-[#3A3F58] dark:bg-[#ECE6CD] text-[#F9AC67] dark:text-[#3A3F58] px-6 py-3 rounded-lg shadow-md hover:bg-[#EE6A59] dark:hover:bg-[#F9AC67] transition-colors" id="music-toggle">
      <i class="fas fa-music mr-2">
@@ -787,13 +827,49 @@ section {
    </div>
   </section>
   <!-- Resume / Timeline Section -->
-  <section class="container py-20" id="resume">
-   <h2 class="text-4xl font-bold text-center mb-12 text-[#EE6A59]">
-    Resume &amp; Timeline
-   </h2>
-   <div aria-label="Interactive 3D timeline" class="relative w-full max-w-5xl mx-auto" id="resume-timeline">
-   </div>
-  </section>
+<section class="container py-20" id="resume">
+  <h2 class="text-4xl font-bold text-center mb-12 text-[#EE6A59]">Resume & Timeline</h2>
+  <div aria-label="Interactive 3D timeline" class="relative w-full max-w-5xl mx-auto" id="resume-timeline"></div>
+
+  <!-- View Certificate Button -->
+  <div class="text-center mt-12">
+    <button 
+      aria-label="View certificate" 
+      class="bg-[#3A3F58] dark:bg-[#ECE6CD] text-[#F9AC67] dark:text-[#3A3F58] px-6 py-3 rounded-lg shadow-md hover:bg-[#EE6A59] dark:hover:bg-[#F9AC67] transition-colors"
+      id="view-certificate-btn">
+      View Certificate
+    </button>
+  </div>
+</section>
+
+<!-- Hidden Certificate Image for Lightbox -->
+<img 
+  src="../images/resume.jpg" 
+  alt="Sample Certificate of Achievement" 
+  id="certificate-img" 
+  class="hidden">
+
+  <script>
+function setupCertificateButton() {
+  const btn = document.getElementById('view-certificate-btn');
+  const img = document.getElementById('certificate-img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  if (!btn || !img || !lightbox || !lightboxImg) return;
+
+  btn.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', setupCertificateButton);
+</script>
+
   <!-- Testimonials Section -->
   <section class="bg-[#3A3F58] dark:bg-[#2c3145] py-20" id="testimonials">
    <div class="container max-w-5xl">
@@ -859,19 +935,19 @@ section {
     </button>
    </form>
    <div aria-label="Social media links" class="social-icons mt-12" role="list">
-    <a aria-label="GitHub" href="https://github.com/amieljake" rel="noopener" role="listitem" target="_blank">
+    <a aria-label="GitHub" href="https://github.com/amieljake929" rel="noopener" role="listitem" target="_blank">
      <i class="fab fa-github">
      </i>
     </a>
-    <a aria-label="Facebook" href="https://facebook.com/amiel.jake" rel="noopener" role="listitem" target="_blank">
+    <a aria-label="Facebook" href="https://www.facebook.com/AmielJakeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee/" rel="noopener" role="listitem" target="_blank">
      <i class="fab fa-facebook">
      </i>
     </a>
-    <a aria-label="Instagram" href="https://instagram.com/amieljake" rel="noopener" role="listitem" target="_blank">
+    <a aria-label="Instagram" href="https://www.instagram.com/lukessssz/" rel="noopener" role="listitem" target="_blank">
      <i class="fab fa-instagram">
      </i>
     </a>
-    <a aria-label="Twitter" href="https://twitter.com/amieljake" rel="noopener" role="listitem" target="_blank">
+    <a aria-label="Twitter" href="https://x.com/amieljake11" rel="noopener" role="listitem" target="_blank">
      <i class="fab fa-twitter">
      </i>
     </a>
@@ -969,21 +1045,29 @@ section {
 
     // Append song cards dynamically
     const lukeChiangSongs = [
-      { title: "Shouldn't Be", artist: "Luke Chiang", spotify: "https://open.spotify.com/track/3v6q6q6q6q6q6q6q6q6q6q" },
-      { title: "May I Ask", artist: "Luke Chiang", spotify: "https://open.spotify.com/track/4a7a7a7a7a7a7a7a7a7a7a7" },
-      { title: "Paragraph", artist: "Luke Chiang", spotify: "https://open.spotify.com/track/5b8b8b8b8b8b8b8b8b8b8b8" },
-      { title: "Never Tell", artist: "Luke Chiang", spotify: "https://open.spotify.com/track/6c9c9c9c9c9c9c9c9c9c9c9" },
-    ];
-    const sarahKangSongs = [
-      { title: "Bittersweet", artist: "Sarah Kang", spotify: "https://open.spotify.com/track/7d0d0d0d0d0d0d0d0d0d0d0" },
-    ];
-    const jesseBarreraSongs = [
-      { title: "Pretend", artist: "Jesse Barrera", spotify: "https://open.spotify.com/track/8e1e1e1e1e1e1e1e1e1e1e1" },
-      { title: "Strawberry Soju", artist: "Jesse Barrera", spotify: "https://open.spotify.com/track/9f2f2f2f2f2f2f2f2f2f2f2" },
-      { title: "Chase", artist: "Jesse Barrera", spotify: "https://open.spotify.com/track/0a3a3a3a3a3a3a3a3a3a3a3" },
-      { title: "Mars", artist: "Jesse Barrera", spotify: "https://open.spotify.com/track/1b4b4b4b4b4b4b4b4b4b4b4" },
-      { title: "Tapioca", artist: "Jesse Barrera", spotify: "https://open.spotify.com/track/2c5c5c5c5c5c5c5c5c5c5c5" },
-    ];
+  { title: "Shouldn't Be", artist: "Luke Chiang", spotify: "https://open.spotify.com/track/7F6PtLP6fJPVtA1FWVkl8K?si=dab6986d0151499e" },
+  { title: "May I Ask", artist: "Luke Chiang", spotify: "https://open.spotify.com/track/3BajoSb3TjPbcOC873OjbD?si=ce64025ad4864519" },
+  { title: "Paragraph", artist: "Luke Chiang", spotify: "https://open.spotify.com/track/2p9Ac0KQAUfOIXXWAxlzmM?si=6949ca9293c74094 " },
+  { title: "Never Tell", artist: "Luke Chiang", spotify: "https://open.spotify.com/track/72Vu0dhVlpjtdPdli224Nf?si=234b36a68fe34094 " },
+      { title: "Bittersweet", artist: "Luke Chiang", spotify: "https://open.spotify.com/track/0wEqNUKF9MH4pk5va6HNCt?si=df998f37a916453c" },
+
+];
+
+const jesseBarreraSongs = [
+  { title: "Pretend", artist: "Jesse Barrera", spotify: "https://open.spotify.com/track/8e1e1e1e1e1e1e1e1e1e1e1 " },
+  { title: "Strawberry Soju", artist: "Jesse Barrera", spotify: "https://open.spotify.com/track/9f2f2f2f2f2f2f2f2f2f2f2 " },
+  { title: "Chase", artist: "Jesse Barrera", spotify: "https://open.spotify.com/track/0a3a3a3a3a3a3a3a3a3a3a3 " },
+  { title: "Mars", artist: "Jesse Barrera", spotify: "https://open.spotify.com/track/1b4b4b4b4b4b4b4b4b4b4b4 " },
+  { title: "Tapioca", artist: "Jesse Barrera", spotify: "https://open.spotify.com/track/2c5c5c5c5c5c5c5c5c5c5c5 " },
+];
+
+const riniSongs = [
+  { title: "Gone With The Wind", artist: "RINI", spotify: "https://open.spotify.com/track/7d7d7d7d7d7d7d7d7d7d7d7 " },
+  { title: "Strawberry Blossom", artist: "RINI", spotify: "https://open.spotify.com/track/8e8e8e8e8e8e8e8e8e8e8e8 " },
+  { title: "Out Of The Blue", artist: "RINI", spotify: "https://open.spotify.com/track/9f9f9f9f9f9f9f9f9f9f9f9 " },
+  { title: "Scars", artist: "RINI", spotify: "https://open.spotify.com/track/0a0a0a0a0a0a0a0a0a0a0a0 " },
+  { title: "For Days", artist: "RINI", spotify: "https://open.spotify.com/track/1b1b1b1b1b1b1b1b1b1b1b1 " },
+];
 
     function appendSongs(containerSelector, songs) {
       const container = document.querySelector(containerSelector);
@@ -995,9 +1079,9 @@ section {
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      appendSongs('#music div:nth-child(1) > div:nth-child(2)', lukeChiangSongs);
-      appendSongs('#music div:nth-child(2) > div:nth-child(2)', sarahKangSongs);
-      appendSongs('#music div:nth-child(3) > div:nth-child(2)', jesseBarreraSongs);
+  appendSongs('#luke-chiang-songs', lukeChiangSongs);
+  appendSongs('#jesse-barrera-songs', jesseBarreraSongs);
+  appendSongs('#rini-songs', riniSongs);
 
       // Append project cards
       const portfolioGrid = document.querySelector('#portfolio > div > div.grid');
@@ -1019,14 +1103,14 @@ section {
       const galleryGrid = document.querySelector('#gallery > div.grid');
       if (galleryGrid) {
         const galleryImages = [
-          { src: "https://placehold.co/400x400/png?text=Travel+1", alt: "Travel photo of Amiel at a mountain peak during sunset" },
-          { src: "https://placehold.co/400x400/png?text=Hobby+1", alt: "Amiel playing guitar in a cozy room with warm lighting" },
-          { src: "https://placehold.co/400x400/png?text=Travel+2", alt: "Amiel walking on a beach with waves and blue sky" },
-          { src: "https://placehold.co/400x400/png?text=Hobby+2", alt: "Amiel painting on a canvas in a bright art studio" },
-          { src: "https://placehold.co/400x400/png?text=Travel+3", alt: "Amiel exploring a vibrant city street at night with neon lights" },
-          { src: "https://placehold.co/400x400/png?text=Life+Moment", alt: "Amiel laughing with friends at a cafe outdoor" },
-          { src: "https://placehold.co/400x400/png?text=Hobby+3", alt: "Amiel working on a laptop with headphones on in a cozy workspace" },
-          { src: "https://placehold.co/400x400/png?text=Travel+4", alt: "Amiel hiking through a lush green forest trail" },
+          { src: "../images/1.jpg", alt: "Travel photo of Amiel at a mountain peak during sunset" },
+          { src: "../images/2.jpg", alt: "Amiel playing guitar in a cozy room with warm lighting" },
+          { src: "../images/3.jpg", alt: "Amiel walking on a beach with waves and blue sky" },
+          { src: "../images/4.jpg", alt: "Amiel painting on a canvas in a bright art studio" },
+          { src: "../images/5.jpg", alt: "Amiel exploring a vibrant city street at night with neon lights" },
+          { src: "../images/6.jpg", alt: "Amiel laughing with friends at a cafe outdoor" },
+          { src: "../images/7.jpg", alt: "Amiel working on a laptop with headphones on in a cozy workspace" },
+          { src: "../images/8.jpg", alt: "Amiel hiking through a lush green forest trail" },
         ];
         galleryImages.forEach(img => {
           galleryGrid.appendChild(GalleryImage(img));
@@ -1578,5 +1662,136 @@ section {
       }
     })();
   </script>
+
+  <script>
+
+    // Smart Navbar & Theme Toggle Show/Hide on Scroll
+const navbar = document.getElementById('navbar');
+const themeToggle = document.getElementById('theme-toggle');
+
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', () => {
+  const currentScrollTop = window.scrollY;
+
+  // Only hide if scrolled down more than 50px
+  if (currentScrollTop > 50 && currentScrollTop > lastScrollTop) {
+    // Scrolling down
+    navbar.classList.remove('visible');
+    navbar.classList.add('transparent');
+    themeToggle.classList.remove('visible');
+    themeToggle.classList.add('transparent');
+  } 
+  // Only show again when back at the very top
+  else if (currentScrollTop === 0) {
+    navbar.classList.add('visible');
+    navbar.classList.remove('transparent');
+    themeToggle.classList.add('visible');
+    themeToggle.classList.remove('transparent');
+  }
+
+  lastScrollTop = currentScrollTop;
+});
+
+    </script>
+
+    <script>
+
+      // Vinyl record 3D rotating canvas in music section
+(() => {
+  const canvas = document.getElementById('vinyl-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const size = canvas.width;
+  const center = size / 2;
+  let rotation = 0;
+
+  // Load the Spotify image
+  const img = new Image();
+  img.src = '../images/Spotify.png';
+  img.onload = () => {
+    drawVinyl(); // Draw immediately once image is loaded
+  };
+
+  function drawVinyl() {
+    ctx.clearRect(0, 0, size, size);
+
+    // Save context before rotation
+    ctx.save();
+    ctx.translate(center, center);
+    ctx.rotate(rotation);
+    ctx.translate(-center, -center);
+
+    // Outer black circle (vinyl)
+    ctx.beginPath();
+    ctx.arc(center, center, center - 10, 0, Math.PI * 2);
+    ctx.fillStyle = '#111';
+    ctx.fill();
+
+    // Inner silver circle (label)
+    ctx.beginPath();
+    ctx.arc(center, center, 40, 0, Math.PI * 2);
+    ctx.fillStyle = '#ccc'; // Light gray for label
+    ctx.fill();
+
+    // Draw Spotify logo in the center
+    const imgSize = 50;
+    ctx.drawImage(
+      img,
+      center - imgSize / 2,
+      center - imgSize / 2,
+      imgSize,
+      imgSize
+    );
+
+    // Restore context
+    ctx.restore();
+
+    // Increment rotation for animation
+    rotation += 0.005;
+
+    // Request next frame
+    requestAnimationFrame(drawVinyl);
+  }
+
+  // Start drawing
+  drawVinyl();
+})();
+
+      </script>
+
+      <script>
+
+        // === Smooth Scroll & Mobile Menu Close for Nav Links ===
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href');
+    
+    // Skip if it's an empty hash or external link
+    if (targetId === '#' || targetId === '') return;
+
+    const targetElement = document.querySelector(targetId);
+
+    // Prevent default only if target exists
+    if (targetElement) {
+      e.preventDefault();
+
+      // Close mobile menu if open
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+      }
+
+      // Manual smooth scroll with offset
+      window.scrollTo({
+        top: targetElement.offsetTop - 80, // Offset for fixed header
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+        </script>
+ 
  </body>
 </html>
